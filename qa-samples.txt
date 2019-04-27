@@ -1,0 +1,64 @@
+Question: Where is Central Park?
+Correct Answer: Central Park is an urban park in Manhattan, New York City.
+My System Answer: Central Park is an urban park in Manhattan, New York City.
+Question: Where is Bollywood?
+Correct Answer: Bollywood is based in Mumbai (formerly Bombay), Maharashtra, India.
+My System Answer: Hindi cinema, often metonymously referred to as Bollywood, and formerly known as Bombay cinema, is the Indian Hindi-language film industry, based in Mumbai (formerly Bombay), Maharashtra, India.
+Question: Where is Houston located?
+Correct Answer: Houston is located in the U.S. state of Texas.
+My System Answer: Houston ( (listen) HEW-stən) is the most populous city in the U.S. state of Texas and the fourth most populous city in the United States, with a census-estimated population of 2.312 million in 2017.
+Question: Where is Italy?
+Correct Answer: Italy is in Southern Europe.
+My System Answer: Italy (Italian: Italia [iˈtaːlja] (listen)), officially the Italian Republic (Italian: Repubblica Italiana [reˈpubblika itaˈljaːna]), is a country in Southern Europe.
+Question: Where is the White House?
+Correct Answer: The White House is in Washington, D.C.
+My System Answer: The White House is the official residence and workplace of the President of the United States.
+
+Question: What is a telescope?
+Correct Answer: An instrument used to look or see.
+My System Answer: Etymology The word telescope (from the Ancient Greek τῆλε, tele "far" and σκοπεῖν, skopein "to look or see"; τηλεσκόπος, teleskopos "far-seeing") was coined in 1611 by the Greek mathematician Giovanni Demisiani for one of Galileo Galilei's instruments presented at a banquet at the Accademia dei Lincei.
+Question: What was the Chinese Civil War?
+Correct Answer: The Civil War marked a major turning point in modern Chinese history, with the Communists gaining control of mainland China and establishing the People's Republic of China (PRC) in 1949, forcing the Republic of China (ROC) to retreat to Taiwan.
+My System Answer: The Civil War marked a major turning point in modern Chinese history, with the Communists gaining control of mainland China and establishing the People's Republic of China (PRC) in 1949, forcing the Republic of China (ROC) to retreat to Taiwan.
+Question: What is Twitter?
+Correct Answer: Twitter is a social media app.
+My System Answer: Users access Twitter through its website interface, through Short Message Service (SMS) or its mobile-device application software ("app").
+Question: What is love?
+Correct Answer: Love has been postulated to be a function to keep human beings together against menaces and to facilitate the continuation of the species.Ancient Greek philosophers identified five forms of love: essentially, familial love (in Greek, Storge), friendly love or platonic love (Philia), romantic love (Eros), guest love (Xenia) and divine love (Agape).
+My System Answer: Love has been postulated to be a function to keep human beings together against menaces and to facilitate the continuation of the species.Ancient Greek philosophers identified five forms of love: essentially, familial love (in Greek, Storge), friendly love or platonic love (Philia), romantic love (Eros), guest love (Xenia) and divine love (Agape).
+Question: What is a life sentence?
+Correct Answer: Life imprisonment (also known as imprisonment for life, life in prison, a life sentence, a life term, lifelong incarceration, life incarceration or simply life) is any sentence of imprisonment for a crime under which convicted persons are to remain in prison either for the rest of their natural life or until paroled.
+My System Answer: Life imprisonment (also known as imprisonment for life, life in prison, a life sentence, a life term, lifelong incarceration, life incarceration or simply life) is any sentence of imprisonment for a crime under which convicted persons are to remain in prison either for the rest of their natural life or until paroled.
+
+Question: When was George Washington born?
+Correct Answer: George Washington was born on February 22, 1732.
+My System Answer: George Washington was born February 22, 1732 at Popes Creek in Westmoreland County, Virginia, and was the first of six children of Augustine and Mary Ball Washington.
+Question: When is Mardi Gras?
+Correct Answer: Mardi Gras, or Fat Tuesday, refers to events of the Carnival celebration, beginning on or after the Christian feasts of the Epiphany (Three Kings Day) and culminating on the day before Ash Wednesday (known as Shrove Tuesday).
+My System Answer: Mardi Gras (), or Fat Tuesday, refers to events of the Carnival celebration, beginning on or after the Christian feasts of the Epiphany (Three Kings Day) and culminating on the day before Ash Wednesday (known as Shrove Tuesday).
+Question: When is Christmas?
+Correct Answer: Christmas is on on December 25.
+My System Answer: Christmas is an annual festival, commemorating the birth of Jesus Christ, observed primarily on December 25 as a religious and cultural celebration among billions of people around the world.
+Question: When was the Great War?
+Correct Answer: The Great War was from 28 July 1914 to 11 November 1918.
+My System Answer: World War I (often abbreviated as WWI or WW1), also known as the First World War or the Great War, was a global war originating in Europe that lasted from 28 July 1914 to 11 November 1918.
+Question: When did the Great Depression start?
+Correct Answer: The timing of the Great Depression varied across nations; in most countries it started in 1929 and lasted until the late-1930s.
+My System Answer: The timing of the Great Depression varied across nations; in most countries it started in 1929 and lasted until the late-1930s.
+
+
+Question: Who is Donald Trump?
+Correct Answer: Donald John Trump is the 45th and current president of the United States.
+My System Answer: Donald John Trump (born June 14, 1946) is the 45th and current president of the United States.
+Question: Who is Braden Holtby?
+Correct Answer: Braden Holtby is a Canadian professional ice hockey goaltender currently playing for the Washington Capitals of the National Hockey League (NHL).
+My System Answer: Braden Holtby (born September 16, 1989) is a Canadian professional ice hockey goaltender currently playing for the Washington Capitals of the National Hockey League (NHL).
+Question: Who is Steve Jobs?
+Correct Answer: Jobs is widely recognized as a pioneer of the microcomputer revolution of the 1970s and 1980s, along with Apple co-founder Steve Wozniak.
+My System Answer: Jobs is widely recognized as a pioneer of the microcomputer revolution of the 1970s and 1980s, along with Apple co-founder Steve Wozniak.
+Question: Who is Narendra Modi?
+Correct Answer: Narendra Damodardas Modi is an Indian politician serving as the 14th and current Prime Minister of India since 2014.
+My System Answer: Narendra Damodardas Modi (pronounced [ˈnəɾendrə dɑmodəɾˈdɑs ˈmodiː] (listen); born 17 September 1950) is an Indian politician serving as the 14th and current Prime Minister of India since 2014.
+Question: Who is Tom Clancy?
+Correct Answer: Tom Clancy is an author.
+My System Answer: Tom Clancy's works also inspired games such as the Ghost Recon, Rainbow Six, and Splinter Cell series.
