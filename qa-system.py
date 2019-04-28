@@ -314,8 +314,20 @@ def main():##main method
 
         switch(firstToken)
 
-        wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
+        wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
 
+        # print (wikiReturnDict.get("answerWords", "none"))
+
+
+        if wikiReturnDict != None:
+
+            if "answerWords" in wikiReturnDict:
+                answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
+            else:
+                print (wikiReturnDict.get("fullSentence", "none"))
+
+        else:
+            default_Recognizer()
 
         # if posTokens[tokenIndex][0] == "What":
         #     answerType = "definition"
@@ -386,6 +398,21 @@ wiki_html=wikipediaapi.Wikipedia(
         language='en',
         extract_format=wikipediaapi.ExtractFormat.HTML
 )
+
+def answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict):
+    resultList = wikiReturnDict.get("answerWords", "none")
+    # print("result list: " + str(resultList) + " type: " + str(type(resultList)))
+    # print("questionPhraseTokens: " + str(questionPhraseTokens))
+    # print("queryPhraseTokens: " + str(queryPhraseTokens))
+    mergedTokens = questionPhraseTokens + queryPhraseTokens
+    # print("merged tokens: " + str(mergedTokens))
+    beginSentence = " ".join(mergedTokens)
+    # print("beginSentence: " + str(beginSentence))
+    # mergedList = mergedTokens + resultList
+    endSentence = " ".join(resultList)
+    # print("endSentence: " + str(endSentence))
+    # finalString = str(beginSentence) + str(endSentence)
+    print(str(beginSentence) + " " + str(endSentence) + ".")
 
 def wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern):
 
@@ -578,10 +605,10 @@ def wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPatt
             mostInterestingSentence = sentence
             mostInterestingTaggedWords = posTaggedWords
 
-    if mostInterestingSentence == None:
-        return
-    else:
-        print("[SYSTEM] " + str(mostInterestingSentence))
+    # if mostInterestingSentence == None:
+    #     return
+    # else:
+        # print("[SYSTEM] " + str(mostInterestingSentence))
         # print("interest level: " + str(highestInterestLevel))
         # print(mostInterestingTaggedWords)
 
@@ -603,14 +630,16 @@ def wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPatt
     fullMatch = False
 
     answerWords = []
+    answerDict = {}
 
     if len(answerPattern) == 0:
         answerWords = answerTokens
     else:
+        # print("PROGRAM REACHED HERE")
         for aToken in answerTokens:
             # print("answerpattern index " + str(answerPatternIndex))
             if aToken[1] == answerPattern[answerPatternIndex]:
-                #print("matched token with pattern " + aToken[0])
+                # print("matched token with pattern " + aToken[0])
                 stillMatch = True
                 answerWords.append(aToken[0])
                 answerPatternIndex += 1
@@ -632,9 +661,12 @@ def wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPatt
                     break
 
         if fullMatch == True:
-            #print("full match with ")
+            # print("full match with ")
+            answerDict["answerWords"] = answerWords
+            answerDict["fullSentence"] = str(mostInterestingSentence)
             # print("[SYSTEM] ", end = '' + str(answerWords))
-            return
+            print(answerDict)
+            return answerDict
 
 
 if __name__ == "__main__":
