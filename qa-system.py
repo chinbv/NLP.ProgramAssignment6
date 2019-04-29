@@ -60,6 +60,7 @@ from nltk.corpus import brown
 from nltk.corpus import stopwords
 from nltk import sent_tokenize, word_tokenize
 from nltk import PorterStemmer
+from nltk.corpus import wordnet
 import lxml.html
 import string
 
@@ -184,7 +185,7 @@ def main():##main method
                 # print("tokenIndex: " + str(tokenIndex))
                 tokenIndex += 1
 
-            whatAnswerTypes = ["NNP"]
+            whatAnswerTypes = ["NN"]
             whatPattern = ["NN"]
 
             answerTypes.extend(whatAnswerTypes)
@@ -314,20 +315,60 @@ def main():##main method
 
         switch(firstToken)
 
-        wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
+
+        # wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
+
+        print("questionPhraseTokens: " + str(questionPhraseTokens))
+        questionString = "".join(questionPhraseTokens)
+        questionSyns = wordnet.synsets(str(questionString))
+        print("questionSyns: " + str(questionSyns))
+
+        print("queryPhraseTokens: " + str(queryPhraseTokens))
+        queryString = "".join(queryPhraseTokens)
+        querySyns = wordnet.synsets(str(queryString))
+        # querySyns.split()
+        # print(querySyns[1].lemmas()[0].name())
+        # print("querySyns list: " + str(querySyns))
+
+        #List of synonyms, run through it, if you get a return, then move on to next question, otherwise go to next synonym and try that
+        #List of more specifics like -name, run through that list, if you get a return, then move on to next question, otherwise go to next -topic and try that
+        for i in range(len(querySyns)):
+            print(querySyns[i].lemmas()[0].name())
+            queryPhraseTokens=querySyns[i].lemmas()[0].name()
+            queryPhraseTokens=queryPhraseTokens.lower()
+            queryPhraseTokens=queryPhraseTokens.split()
+            print(type(queryPhraseTokens))
+            print(type(questionPhraseTokens))
+            # questionPhraseTokens.split()
+            wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
+            if wikiReturnDict != None:
+
+                if "answerWords" in wikiReturnDict:
+                    answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
+                    return
+                else:
+                    print (wikiReturnDict.get("fullSentence", "none"))
+                    return
+
+            # print("querySyns list: " + str(querySyns))
+
+
+
+        # syns = wordnet.synsets("born")
+        # print(syns)
 
         # print (wikiReturnDict.get("answerWords", "none"))
 
 
-        if wikiReturnDict != None:
-
-            if "answerWords" in wikiReturnDict:
-                answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
-            else:
-                print (wikiReturnDict.get("fullSentence", "none"))
-
-        else:
-            default_Recognizer()
+        # if wikiReturnDict != None:
+        #
+        #     if "answerWords" in wikiReturnDict:
+        #         answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
+        #     else:
+        #         print (wikiReturnDict.get("fullSentence", "none"))
+        #
+        # else:
+        #     default_Recognizer()
 
         # if posTokens[tokenIndex][0] == "What":
         #     answerType = "definition"
@@ -469,10 +510,10 @@ def wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPatt
 
 
     # print("Asking about " + questionPhrase + " " + queryPhrase)
-    # print("subject tokens: ")
-    # print(questionPhraseTokens)
-    # print("question tokens: ")
-    # print(queryPhraseTokens)
+    print("question tokens: ")
+    print(questionPhraseTokens)
+    print("query tokens: ")
+    print(queryPhraseTokens)
 
     if questionPhrase == None or questionPhrase == "":
         default_Recognizer()
