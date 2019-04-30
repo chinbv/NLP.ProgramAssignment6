@@ -327,28 +327,38 @@ def main():##main method
         queryString = "".join(queryPhraseTokens)
         querySyns = wordnet.synsets(str(queryString))
         # querySyns.split()
-        # print(querySyns[1].lemmas()[0].name())
-        # print("querySyns list: " + str(querySyns))
+        # print(querySyns[0].lemmas()[0].name())
+        print("querySyns list: " + str(querySyns))
 
         #List of synonyms, run through it, if you get a return, then move on to next question, otherwise go to next synonym and try that
         #List of more specifics like -name, run through that list, if you get a return, then move on to next question, otherwise go to next -topic and try that
-        for i in range(len(querySyns)):
-            print(querySyns[i].lemmas()[0].name())
-            queryPhraseTokens=querySyns[i].lemmas()[0].name()
-            queryPhraseTokens=queryPhraseTokens.lower()
-            queryPhraseTokens=queryPhraseTokens.split()
-            print(type(queryPhraseTokens))
-            print(type(questionPhraseTokens))
-            # questionPhraseTokens.split()
-            wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
-            if wikiReturnDict != None:
 
-                if "answerWords" in wikiReturnDict:
-                    answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
-                    return
-                else:
-                    print (wikiReturnDict.get("fullSentence", "none"))
-                    return
+        wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
+
+        if wikiReturnDict == None:
+            for i in range(len(querySyns)):
+                print("Count is: " + str(i))
+                print(querySyns[i].lemmas()[0].name())
+                queryPhraseTokens=querySyns[i].lemmas()[0].name()
+                queryPhraseTokens=queryPhraseTokens.lower()
+                queryPhraseTokens=queryPhraseTokens.split()
+                # print(type(queryPhraseTokens))
+                # print(type(questionPhraseTokens))
+                # questionPhraseTokens.split()
+                wikiReturnDict = wiki_Search(questionPhraseTokens, queryPhraseTokens, answerTypes, answerPattern)
+                if wikiReturnDict != None:
+
+                    if "answerWords" in wikiReturnDict:
+                        answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
+                        break
+                    else:
+                        print (wikiReturnDict.get("fullSentence", "none"))
+                        break
+        else:
+            if "answerWords" in wikiReturnDict:
+                answer_Formulation(questionPhraseTokens, queryPhraseTokens, wikiReturnDict)
+            else:
+                print (wikiReturnDict.get("fullSentence", "none"))
 
             # print("querySyns list: " + str(querySyns))
 
